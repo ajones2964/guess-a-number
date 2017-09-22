@@ -4,8 +4,8 @@ import math
 # config
 low = 1
 high = 10
-limit_math = math.log(high, 2)
-limit = math.ceil(limit_math)
+limit = math.ceil(math.log(high, 2))
+
 
 # helper functions
 def show_start_screen():
