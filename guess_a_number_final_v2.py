@@ -14,10 +14,11 @@ guess_limit = math.ceil(math.log((high - low + 1), 2))
 guesses = 0
 annoyance = 0
 plays = 0
+running = 0
 ##############
 
 def done():
-    global annoyance, guesses
+    global annoyance, guesses, playing
     if guesses >= guess_limit:
         print("You're Cheating.. I don't want to play with you!")
         rt = input("Do you want to play again?")
@@ -26,58 +27,60 @@ def done():
             play()
         elif rt == "no":
             print("Oh well.. you just get to sit here until you close it out")
-            input()
-            guesses = 7
             show_credits()
-            exit
+            input()
+            playing = 0
+            quit()
         else:
             print("I don't give second tries to those who aren't serious..")
-            input()
-            guesses = 7
             show_credits()
-            exit
-    elif annoyance > 4:
+            input()
+            playing = 0
+            quit()
+    elif annoyance >= 4:
         input("You're honestly the worst person to play this game yet.. You should be ashamed..")
         input("I wont even give you another chance.. just get out and turn the computer off..")
-        input()
-        guesses = 7
         show_credits()
-        exit
+        input()
+        playing = 0
+        quit()
     else:
         rt = input("Do you want to play again?")
         print()
         rt = rt.lower()
         if rt == "yes":
-            show_credits()
             start()
         elif rt == "no":
             input("Well.. you just get to sit here until you close this out")
-            guesses = 7
             show_credits()
-            exit
+            input()
+            playing = 0
+            quit()
         else:
             input("I don't give second tries to those who aren't serious..")
-            guesses = 7
             show_credits()
-            exit
+            playing = 0
+            quit()
             
            
 def low_hig():
-    global guesses, sn, act_high, act_low
+    global guesses, sn, act_high, act_low, guess_limit
     a1 = input("Oh? Is it lower or higher?")
     print()
     a1 = a1.lower()
-    if a1 == "lower":
-        if guesses < 6:
+    if guesses < guess_limit:
+        if a1 == "lower":
             act_high = sn
             sn = math.ceil((act_low+act_high)/2) - 1
-        guesses = guesses + 1
-    elif a1 == "higher":
-        guesses = guesses + 1
-        act_low = sn
-        sn = math.ceil((act_low+act_high)/2) + 1
+            guesses = guesses + 1
+        elif a1 == "higher":
+            guesses = guesses + 1
+            act_low = sn
+            sn = math.ceil((act_low+act_high)/2) + 1
+        else:
+            low_high_annoy()
     else:
-        low_high_annoy()
+        done()
         
 
 def low_high_annoy():
@@ -143,23 +146,25 @@ def check_guess_annoy():
         
 
 def play():
-    global plays
-    while guesses < guess_limit:
+    global plays, playing
+    while playing == 1:
         plays = plays + 1
         check_guess()
         
 def start():
-    global annoyance, plays
+    global annoyance, plays, playing
     start = input("Think of a number between 1 and 100, and i'll guess it. Type start to Start.")
     start = start.lower()
     if start == "start":
         print("Have fun!")
         print()
+        playing = 1
         play()
     else:
         annoyance = annoyance + 1
         print("Wow.. Can't even follow the directions.. you're stupid.")
         print()
+        playing = 1
         play()
 
 def splash():
@@ -167,18 +172,18 @@ def splash():
  /__      _   _  _    /\    |\ |     ._ _  |_   _  ._  /( )
  \_| |_| (/_ _> _>   /--\   | \| |_| | | | |_) (/_ |    / \\
                                                       """)
+
 def show_credits():
-    if plays <= 1:
-        print("""################
+
+    print("""################
 #   This Rad   #
 # Program Was  #
 #   Made By    #
 #              #
 # Ashton Jones #
-################
-""")
-    else:
-        pass
+################""")
+
+
 splash()
 start()
 #            ,---,_ 
