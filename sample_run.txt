@@ -1,0 +1,84 @@
+        __                                                                                                                                                                                                                    (?_?)/            
+ /__      _   _  _    /\    |\ |     ._ _  |_   _  ._  /( )
+ \_| |_| (/_ _> _>   /--\   | \| |_| | | | |_) (/_ |    / \
+                                                      
+What is your name?Qwerty
+Choose your high (EX: 100)100
+Choose your low (EX: 1)1
+Think of a number between 1 and 100 and i'll guess it. Type start to Start.start
+Have fun!
+
+Is your number 51?n
+
+Oh? Is it lower or higher?l
+
+Is your number 26?no
+
+Oh? Is it lower or higher?lower
+
+Is your number 14?nO
+
+Oh? Is it lower or higher?lOwEr
+
+Is your number 8?n
+
+Oh? Is it lower or higher?h
+
+Is your number 11?HiGhEr
+
+Once again, type yes or no as a response please..
+
+Is your number 11?no
+
+Oh? Is it lower or higher?HiGhEr
+
+Is your number 13?yes
+
+woo
+I guessed your number in 6 tries.
+
+Do you want to play again?yes
+
+Choose your high (EX: 100)100
+Choose your low (EX: 1)1
+Think of a number between 1 and 100 and i'll guess it. Type start to Start.start
+Have fun!
+
+Is your number 51?n
+
+Oh? Is it lower or higher?higher
+
+Is your number 76?n
+
+Oh? Is it lower or higher?l
+
+Is your number 64?n
+
+Oh? Is it lower or higher?l
+
+Is your number 58?n
+
+Oh? Is it lower or higher?l
+
+Is your number 55?n
+
+Oh? Is it lower or higher?l
+
+Is your number 53?n
+
+Oh? Is it lower or higher?l
+
+Is your number 52?n
+
+Oh? Is it lower or higher?l
+
+You're Cheating Qwerty.. I don't want to play with you!
+Do you want to play again?n
+Oh well.. you just get to sit here until you close this out..
+################
+#   This Rad   #
+# Program Was  #
+#   Made By    #
+#              #
+# Ashton Jones #
+################
